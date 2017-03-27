@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  username: string = '';
+  hideContent: boolean;
+  clickLogs: string[] = [];
 
-  resetFields() {
-    this.username = '';
+  onToggleClick($event) {
+    let clickLog = 'Clicked ' + new Date();
+    this.hideContent = !this.hideContent;
+    this.clickLogs.push(clickLog);
   }
 }
